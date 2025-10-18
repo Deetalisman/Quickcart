@@ -1,19 +1,19 @@
+import Footer from "@/app/Footer/page";
+import Navbar from "@/app/Navbar/page";
 import { products } from "@/assets/productData";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { IoStar } from "react-icons/io5";
-import Viewproduct from "./Viewproduct/page";
-const Products = () => {
-  const [pid, setPid] = useState("");
-  const [open, setOpen] = useState(false);
-
+const Allproduct = () => {
   return (
     <div>
-      {/* {pid !== "" && <Viewproduct pid={pid} />} */}
-      <div className="px-[10%] mb-10 mt-20">
-        <p className="text-2xl font-bold">Popular Products</p>
-        <aside className="flex flex-wrap mt-3 justify-between">
+      <Navbar />
+      <div className="px-[10%] mb-10 mt-10">
+        <p className="text-2xl text-[#374151]">All Product</p>
+        <div className="ml-13">
+          <nav className="w-15 h-0.5 rounded-lg bg-[rgb(235,90,12)]"></nav>
+        </div>
+        <aside className="flex flex-wrap mt-5 justify-between">
           {products.map((product) => {
             const { id, name, description, rating, price, imgSrc } = product;
             return (
@@ -42,11 +42,8 @@ const Products = () => {
                 </div>
                 <div className="mt-3 flex justify-between">
                   <p className="text-lg">{price}</p>
-                  <Link href="">
-                    <button
-                      onClick={() => setPid(products.id)}
-                      className="ml-10 cursor-pointer border-1 rounded-xl px-2 py-1 text-[0.7rem] text-gray-400"
-                    >
+                  <Link href="/Viewproduct">
+                    <button className="ml-10 cursor-pointer border-1 rounded-xl px-2 py-1 text-[0.7rem] text-gray-400">
                       Buy now
                     </button>
                   </Link>
@@ -55,16 +52,10 @@ const Products = () => {
             );
           })}
         </aside>
-        <nav className="flex justify-center mt-3">
-          <Link href="/Product/Viewproduct">
-            <button className="ml-10 cursor-pointer border-1 rounded-xl px-12 py-3 text-[0.9rem] text-gray-400">
-              See more
-            </button>
-          </Link>
-        </nav>
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default Products;
+export default Allproduct;

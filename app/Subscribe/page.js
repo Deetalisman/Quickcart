@@ -12,7 +12,7 @@ const Subscribe = () => {
         <div className="mt-7 flex">
           <input
             type="text"
-            placeholder="Enter your email id"
+            placeholder="Enter your email..."
             className="p-2 border-1 rounded-tl-sm rounded-bl-sm border-gray-500 w-[35rem] text-sm"
           />
           <div className="flex justify-center">
