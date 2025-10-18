@@ -1,3 +1,4 @@
+"use client"
 import { products } from "@/assets/productData";
 import Image from "next/image";
 import Link from "next/link";
