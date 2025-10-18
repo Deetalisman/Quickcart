@@ -1,5 +1,3 @@
-import { Formik, useFormik } from "formik";
-import * as yup from "yup";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 const Account = ({ account, setAccount }) => {
@@ -10,21 +8,7 @@ const Account = ({ account, setAccount }) => {
   const onSubmit = (values) => {
     console.log("submitted");
   };
-  // Yup
-  const basicSchema = yup.object().shape({
-    email: yup.string().required().email(),
-    password: yup.string().required().min(7),
-  });
-  //Formik
-  const { errors, values, handleBlur, handleChange, touched, handleSubmit } =
-    useFormik({
-      initialValues: {
-        email: "",
-        password: "",
-      },
-      validationSchema: basicSchema,
-      onSubmit,
-    });
+
   return (
     <div className="absolute overflow-hidden  flex justify-center align-middle top-0 bg-[rgba(3,3,3,0.8)] w-[100%] h-[100vh]">
       <aside className="w-[28rem] mt-20  h-[34rem] py-3 bg-white rounded-lg">
