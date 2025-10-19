@@ -5,9 +5,6 @@ const Account = ({ account, setAccount }) => {
     setAccount(false);
     console.log(account);
   }
-  const onSubmit = (values) => {
-    console.log("submitted");
-  };
 
   return (
     <div className="absolute overflow-hidden  flex justify-center align-middle top-0 bg-[rgba(3,3,3,0.8)] w-[100%] h-[100vh]">
