@@ -1,3 +1,4 @@
+"use client";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { Formik, useFormik } from "formik";
