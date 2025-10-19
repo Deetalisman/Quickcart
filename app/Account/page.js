@@ -1,10 +1,28 @@
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
+import { Formik, useFormik } from "formik";
+import * as yup from "yup";
 const Account = ({ account, setAccount }) => {
   function handlecloseacc() {
     setAccount(false);
     console.log(account);
   }
+  const onSubmit = () => {
+    console.log("submitted");
+  };
+  const basicSchema = yup.object().shape({
+    email: yup.string().email("Enter a valid email").required("Required"),
+    password: yup.string().required("Required"),
+  });
+  const { errors, values, handleBlur, handleChange, touched, handleSubmit } =
+    useFormik({
+      initialValues: {
+        password: "",
+        email: "",
+      },
+      validationSchema: basicSchema,
+      onSubmit,
+    });
 
   return (
     <div className="absolute overflow-hidden  flex justify-center align-middle top-0 bg-[rgba(3,3,3,0.8)] w-[100%] h-[100vh]">
