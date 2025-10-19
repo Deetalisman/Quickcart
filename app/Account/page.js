@@ -27,19 +27,19 @@ const Account = ({ account, setAccount }) => {
 
   return (
     <div className="absolute overflow-hidden  flex justify-center align-middle top-0 bg-[rgba(3,3,3,0.8)] w-[100%] h-[100vh]">
-      <aside className="w-[28rem] mt-20  h-[34rem] py-3 bg-white rounded-lg">
+      <aside className="w-[28rem] mt-20  h-[32rem] py-3 bg-white rounded-lg">
         <h1
           onClick={handlecloseacc}
           className="text-right text-gray-500 cursor-pointer mr-4"
         >
           X
         </h1>
-        <nav className="px-15">
+        <nav className="px-10">
           <div className="text-center">
-            <h1 className="text-xl font-bold">
+            <h1 className="text-xl text-[#374151] font-bold">
               Sign in to QuickCart Ecommerce
             </h1>
-            <p className="text-sm mt-2 text-gray-400">
+            <p className="text-[0.8rem] mt-1 text-gray-400">
               Welcome back! Please sign in to continue
             </p>
           </div>
@@ -91,7 +91,7 @@ const Account = ({ account, setAccount }) => {
           </form>
         </nav>
         <hr className="text-gray-400"></hr>
-        <p className="text-center text-gray-400 text-sm mt-3 mb-3">
+        <p className="text-center text-gray-400 text-[0.7rem] mt-2 mb-2">
           First time?{" "}
           <Link href="/">
             <span className="font-bold text-black cursor-pointer hover:underline">
@@ -100,11 +100,8 @@ const Account = ({ account, setAccount }) => {
           </Link>
         </p>
         <hr className="text-gray-400"></hr>
-        <p className="text-center mt-2 text-gray-400 text-sm">
+        <p className="text-center mt-1 text-gray-400 text-[0.7rem]">
           Secured by Talisman
-        </p>
-        <p className="text-center mt-1 text-sm text-[rgb(235,90,12)]">
-          Development mode
         </p>
       </aside>
     </div>
