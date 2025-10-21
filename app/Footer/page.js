@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="mb-2 mt-20">
-      <aside className="mx-[10%] mb-12 flex justify-between">
+      <aside className="mx-[5%] lg:mx-[10%] mb-12 flex justify-between">
         <div className="w-[50%]">
           <h1 className="text-2xl font-bold">
             <span className="text-[rgb(235,90,12)]">Q</span>uickCart

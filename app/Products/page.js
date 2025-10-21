@@ -7,7 +7,7 @@ import { IoStar } from "react-icons/io5";
 const Products = () => {
   return (
     <div>
-      <div className="px-[10%] mb-10 mt-20">
+      <div className="px-[5%] lg:px-[10%] mb-10 mt-20">
         <p className="text-2xl font-bold">Popular Products</p>
         <aside className="flex flex-wrap mt-3 justify-between">
           {products.map((product) => {
@@ -26,7 +26,7 @@ const Products = () => {
               <Link
                 href={`/Products/${product.id}`}
                 key={product.id}
-                className="mb-7 cursor-pointer w-[18%]"
+                className="mb-7 cursor-pointer w-[30%] md:w-[23%] xl:w-[18%]"
               >
                 <aside>
                   <div className="bg-[#f0f0f2] rounded-lg w-[100%]">
@@ -37,7 +37,7 @@ const Products = () => {
                       className="hover:scale-110 transition-all duration-300"
                     />
                   </div>
-                  <h1 className="mt-2">{name}</h1>
+                  <h1 className="mt-2 text-sm">{name}</h1>
                   <p className="text-gray-600 text-[0.75rem] truncate">
                     {name} has {description}
                   </p>
@@ -52,8 +52,8 @@ const Products = () => {
                     </nav>
                   </div>
                   <div className="mt-3 flex justify-between">
-                    <p className="text-lg">{price}</p>
-                    <button className="ml-10 cursor-pointer border-1 rounded-xl px-2 py-1 text-[0.7rem] text-gray-400">
+                    <p className="text-sm xl:text-lg">{price}</p>
+                    <button className=" cursor-pointer border-1 rounded-xl px-2 py-1 text-[0.7rem] text-gray-400">
                       Buy now
                     </button>
                   </div>

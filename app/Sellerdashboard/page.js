@@ -98,16 +98,16 @@ const Sidebar = ({
   handleSellerView3,
 }) => {
   return (
-    <div className="text-[#374151] h-auto border-r-2 w-[18%] border-gray-400">
+    <div className="text-[#374151] h-auto border-r-2 w-[13rem] lg:w-[15rem] border-gray-400">
       <div
         onClick={handleSellerView1}
         className={
-          "flex h-15 p-5 pl-10 pt-5 cursor-pointer relative " +
+          "flex h-15 p-5 pl-4 lg:pl-10 pt-5 cursor-pointer relative " +
           (sellerView1 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
         <MdAddToQueue className="text-xl mt-0.5" />
-        <p className="text-[1rem] ml-4">Add Product</p>
+        <p className="lg:text-[1rem] text-[0.9rem] ml-1 lg:ml-4">Add Product</p>
         {sellerView1 && (
           <nav className="absolute  w-1 h-15 right-0 top-0 bg-red-400"></nav>
         )}
@@ -115,12 +115,14 @@ const Sidebar = ({
       <div
         onClick={handleSellerView2}
         className={
-          "h-15 flex p-5 pt-5 pl-10 cursor-pointer relative  " +
+          "h-15 flex p-5 pl-4 pt-5 lg:pl-10 cursor-pointer relative  " +
           (sellerView2 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
         <MdFormatListBulleted className="text-xl mt-0.5" />
-        <p className="text-[1rem] ml-4">Product list</p>
+        <p className=" text-[0.9rem] lg:text-[1rem] ml-1 lg:ml-4">
+          Product list
+        </p>
         {sellerView2 && (
           <nav className="absolute  w-1 h-15 right-0 top-0 bg-red-400"></nav>
         )}
@@ -128,12 +130,12 @@ const Sidebar = ({
       <div
         onClick={handleSellerView3}
         className={
-          "h-15 flex p-4 pt-5 pl-10 cursor-pointer relative " +
+          "h-15 flex p-4 pt-5 pl-4 lg:pl-10 cursor-pointer relative " +
           (sellerView3 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
         <IoMdCheckboxOutline className="text-xl mt-0.5" />
-        <p className="text-[1rem] ml-4">Orders</p>
+        <p className="text-[0.9rem] text-[1rem] ml-4">Orders</p>
         {sellerView3 && (
           <nav className="absolute  w-1 h-15 right-0 top-0 bg-red-400"></nav>
         )}
@@ -303,7 +305,7 @@ const Productlist = ({ allProduct }) => {
     <div className="p-[3%]">
       <p className="text-[#374151] font-bold">All Product</p>
       <aside className="mt-4">
-        <table className="w-[80%]">
+        <table className="w-[100%] xl:w-[80%]">
           <thead className="border-1 border-gray-400 rounded-tl-xl rounded-tr-xl h-10">
             <tr>
               <th className="text-sm  text-[#374151]">Product</th>
@@ -323,10 +325,10 @@ const Productlist = ({ allProduct }) => {
             return (
               <tbody
                 key={id}
-                className=" text-gray-600 h-[2rem] text-center border-1 border-gray-400"
+                className=" text-gray-600 h-[2rem] text-[0.8rem] lg:text-[1rem] text-center border-1 border-gray-400"
               >
                 <tr>
-                  <td className="flex mt-2 mb-2 w-[22rem] ml-5">
+                  <td className="flex mt-2 mb-2 w-[14rem] lg:w-[22rem] ml-2 lg:ml-5">
                     <Image
                       src={image}
                       alt={name}
@@ -334,14 +336,16 @@ const Productlist = ({ allProduct }) => {
                       height={50}
                       className="h-15 w-15 bg-gray-200 rounded-lg"
                     />
-                    <p className="mt-5 ml-5">{name}</p>
+                    <p className="mt-5 ml-2 lg:ml-5">{name}</p>
                   </td>
                   <td>{category}</td>
                   <td>${price}</td>
                   <td>
-                    <div className="bg-[#ea580c] flex pl-4 cursor-pointer rounded-lg p-2 text-white text-sm w-20">
-                      <button>Visit</button>
-                      <FaArrowUpRightFromSquare className="pl-2 text-xl" />
+                    <div className="bg-[#ea580c] flex pl-2 lg:pl-4 cursor-pointer rounded-lg px-1 py-2 lg:p-2 text-white text-sm w-16 lg:w-20">
+                      <button className="text-[0.8rem] lg:text-[1rem]">
+                        Visit
+                      </button>
+                      <FaArrowUpRightFromSquare className="pl-2 text-[1.2rem] lg:text-xl" />
                     </div>
                   </td>
                 </tr>

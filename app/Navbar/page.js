@@ -9,14 +9,14 @@ const Navbar = ({ account, setAccount }) => {
   }
   return (
     <div>
-      <div className="px-[10%] flex justify-between py-4">
+      <div className="px-[5%] lg:px-[10%] flex justify-between py-4">
         <Link href="/">
           <h1 className="text-3xl font-bold">
             <span className="text-[rgb(235,90,12)]">Q</span>uickCart
           </h1>
         </Link>
-        <aside className="flex">
-          <ul className="flex justify-between text-gray-600 w-[20rem] mt-1">
+        <aside className="hidden md:flex">
+          <ul className="flex justify-between text-gray-600 w-[15rem] lg:w-[20rem] mt-1">
             <Link href="/">
               <li>Home</li>
             </Link>
@@ -31,7 +31,7 @@ const Navbar = ({ account, setAccount }) => {
             </Link>
           </ul>
           <Link href="/Sellerdashboard">
-            <button className="ml-10 cursor-pointer border-1 rounded-xl p-2 text-[0.7rem] text-gray-400">
+            <button className="ml-4 lg:ml-10 cursor-pointer border-1 rounded-xl p-2 text-[0.7rem] text-gray-400">
               Seller Dashboard
             </button>
           </Link>
