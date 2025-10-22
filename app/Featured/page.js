@@ -3,14 +3,14 @@ import Image from "next/image";
 const Featured = () => {
   return (
     <div className="px-[5%] lg:px-[10%] mt-20 mb-20">
-      <h1 className="text-2xl flex justify-center font-bold">
+      <h1 className="text-2xl text-[#374151] flex justify-center font-bold">
         Featured Products
       </h1>
       <div className="flex justify-center">
         <nav className="w-20 h-0.5 rounded-lg bg-[rgb(235,90,12)]"></nav>
       </div>
-      <aside className="mt-10 flex flex-wrap justify-between">
-        <div className="relative group bg-amber-50 w-[45%] lg:w-[30%] hover:opacity-80">
+      <aside className="mt-10 flex flex-wrap justify-center sm:justify-between">
+        <div className="relative group bg-amber-50 w-[80%] sm:w-[45%] lg:w-[30%] hover:opacity-80">
           <Image
             src={assets.girl_with_headphone_image}
             alt="girlwithheadphone"
@@ -26,7 +26,7 @@ const Featured = () => {
             </button>
           </div>
         </div>
-        <div className="relative group bg-amber-50  w-[45%] lg:w-[30%] hover:opacity-80">
+        <div className="relative group bg-amber-50 mt-7 sm:mt-0 w-[80%] sm:w-[45%] lg:w-[30%] hover:opacity-80">
           <Image
             src={assets.girl_with_earphone_image}
             alt="girlwithheadphone"
@@ -42,7 +42,7 @@ const Featured = () => {
             </button>
           </div>
         </div>
-        <div className="relative group bg-amber-50 lg:mt-0 mt-7  w-[45%] lg:w-[30%] hover:opacity-80">
+        <div className="relative group bg-amber-50 lg:mt-0 mt-7  w-[80%] sm:w-[45%] lg:w-[30%] hover:opacity-80">
           <Image
             src={assets.boy_with_laptop_image}
             alt="girlwithheadphone"

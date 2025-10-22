@@ -3,9 +3,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="mb-2 mt-20">
-      <aside className="mx-[5%] lg:mx-[10%] mb-12 flex justify-between">
-        <div className="w-[50%]">
-          <h1 className="text-2xl font-bold">
+      <aside className="mx-[5%] lg:mx-[10%] mb-3 sm:flex justify-between">
+        <div className="w-100% sm:w-[50%]">
+          <h1 className="text-2xl text-[#374151] font-bold">
             <span className="text-[rgb(235,90,12)]">Q</span>uickCart
           </h1>
           <p className="text-gray-400 text-sm mt-5">
@@ -15,8 +15,8 @@ const Footer = () => {
             service is avaliable at your service.
           </p>
         </div>
-        <div className="text-sm">
-          <h1 className="text-xl text-[#374151]">Company</h1>
+        <div className="text-sm mt-4 sm:mt-0">
+          <h1 className="text-lg text-[#374151]">Company</h1>
           <Link href="/">
             <p className="text-gray-400 mt-3 hover:underline transiton-all duration-500">
               Home
@@ -32,8 +32,8 @@ const Footer = () => {
             Privacy Policy
           </p>
         </div>
-        <div className="text-sm">
-          <h1 className="text-xl text-[#374151]">Get in touch</h1>
+        <div className="text-sm mt-4">
+          <h1 className="text-lg text-[#374151]">Get in touch</h1>
           <p className="text-gray-400 mt-3">+1-234-567-890</p>
           <p className="text-gray-400 mt-2">contact@talisman.com</p>
         </div>

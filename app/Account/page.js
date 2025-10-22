@@ -27,7 +27,7 @@ const Account = ({ account, setAccount }) => {
 
   return (
     <div className="absolute overflow-hidden  flex justify-center align-middle top-0 bg-[rgba(3,3,3,0.8)] w-[100%] h-[100vh]">
-      <aside className="w-[28rem] mt-20  h-[32rem] py-3 bg-white rounded-lg">
+      <aside className=" w-[23rem] md:w-[28rem] mt-20  h-[32rem] py-3 bg-white rounded-lg">
         <h1
           onClick={handlecloseacc}
           className="text-right text-gray-500 cursor-pointer mr-4"

@@ -59,7 +59,7 @@ const Seller = () => {
   }
 
   return (
-    <div className="flex">
+    <div className="md:flex">
       <Sidebar
         sellerView1={sellerView1}
         setSellerView1={setSellerView1}
@@ -71,7 +71,7 @@ const Seller = () => {
         handleSellerView2={handleSellerView2}
         handleSellerView3={handleSellerView3}
       />
-      <div className="w-[80%]">
+      <div className="w-[100%] md:w-[80%]">
         {sellerView1 && (
           <Productupload
             allProduct={allProduct}
@@ -98,16 +98,18 @@ const Sidebar = ({
   handleSellerView3,
 }) => {
   return (
-    <div className="text-[#374151] h-auto border-r-2 w-[13rem] lg:w-[15rem] border-gray-400">
+    <div className="text-[#374151] md:block flex justify-between h-auto md:border-r-2 w-[100%] sm:w-[80%] md:w-[13rem] lg:w-[15rem] border-gray-400">
       <div
         onClick={handleSellerView1}
         className={
-          "flex h-15 p-5 pl-4 lg:pl-10 pt-5 cursor-pointer relative " +
+          "flex h-15 p-5 pl-4 w-50 lg:pl-10 pt-5 cursor-pointer relative " +
           (sellerView1 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
         <MdAddToQueue className="text-xl mt-0.5" />
-        <p className="lg:text-[1rem] text-[0.9rem] ml-1 lg:ml-4">Add Product</p>
+        <p className="lg:text-[1rem] mt-1 text-[0.9rem] ml-2 lg:ml-4">
+          Add Product
+        </p>
         {sellerView1 && (
           <nav className="absolute  w-1 h-15 right-0 top-0 bg-red-400"></nav>
         )}
@@ -115,12 +117,12 @@ const Sidebar = ({
       <div
         onClick={handleSellerView2}
         className={
-          "h-15 flex p-5 pl-4 pt-5 lg:pl-10 cursor-pointer relative  " +
+          "h-15 flex p-5 pl-4 w-50 pt-5 lg:pl-10 cursor-pointer relative  " +
           (sellerView2 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
         <MdFormatListBulleted className="text-xl mt-0.5" />
-        <p className=" text-[0.9rem] lg:text-[1rem] ml-1 lg:ml-4">
+        <p className=" text-[0.9rem] lg:text-[1rem] ml-2 mt-1 lg:ml-4">
           Product list
         </p>
         {sellerView2 && (
@@ -130,7 +132,7 @@ const Sidebar = ({
       <div
         onClick={handleSellerView3}
         className={
-          "h-15 flex p-4 pt-5 pl-4 lg:pl-10 cursor-pointer relative " +
+          "h-15 flex p-4 pt-5 pl-4 w-50 lg:pl-10 cursor-pointer relative " +
           (sellerView3 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
@@ -140,6 +142,7 @@ const Sidebar = ({
           <nav className="absolute  w-1 h-15 right-0 top-0 bg-red-400"></nav>
         )}
       </div>
+      <hr></hr>
     </div>
   );
 };
@@ -328,7 +331,7 @@ const Productlist = ({ allProduct }) => {
                 className=" text-gray-600 h-[2rem] text-[0.8rem] lg:text-[1rem] text-center border-1 border-gray-400"
               >
                 <tr>
-                  <td className="flex mt-2 mb-2 w-[14rem] lg:w-[22rem] ml-2 lg:ml-5">
+                  <td className="sm:flex mt-2 mb-2 w-[15rem] md:w-[14rem] lg:w-[22rem] ml-2 lg:ml-5">
                     <Image
                       src={image}
                       alt={name}
@@ -336,7 +339,7 @@ const Productlist = ({ allProduct }) => {
                       height={50}
                       className="h-15 w-15 bg-gray-200 rounded-lg"
                     />
-                    <p className="mt-5 ml-2 lg:ml-5">{name}</p>
+                    <p className="mt-1 sm:mt-5 ml-2 lg:ml-5">{name}</p>
                   </td>
                   <td>{category}</td>
                   <td>${price}</td>
@@ -360,29 +363,31 @@ const Productlist = ({ allProduct }) => {
 
 const Productorder = () => {
   return (
-    <div className="p-[3%]">
+    <div className="p-[3%] w-[100%]">
       {orderDummyData.map((orderDummyDat) => {
         const { id, quantity, name, amount, address, status } = orderDummyDat;
         return (
           <div
             key={id}
-            className="flex justify-between text-[#374151] py-5 text-sm p-3 border-t-1 border-b-1 border-gray-200"
+            className="flex justify-between text-[#374151] py-5 text-[0.8rem] px-0 md:px-3 border-t-1 border-b-1 border-gray-200"
           >
-            <RxFileText className="bg-amber-200 w-10 h-10 p-2 rounded-lg  text-xl text-[rgb(235,90,12)]" />
-            <aside>
-              <p>{name}</p>
-              <p>items: {quantity}</p>
+            <aside className="block md:flex">
+              <RxFileText className="bg-amber-200 w-10 h-10 p-2 rounded-lg text-[rgb(235,90,12)]" />
+              <aside className="text-[0.8rem] md:ml-3">
+                <p>{name}</p>
+                <p>items: {quantity}</p>
+              </aside>
             </aside>
             <aside>
               <p>{address.fullName}</p>
               <p>{address.area}</p>
               <p>{address.phoneNumber}</p>
             </aside>
-            <p>{amount}</p>
             <aside>
+              <p>Price: {amount}</p>
               <p>Status: {status}</p>
               <p>Ref: {address.pincode}</p>
-              <p>Date: {Date()}</p>
+              <p>Date: Wed 20th Oct 2025</p>
             </aside>
           </div>
         );
