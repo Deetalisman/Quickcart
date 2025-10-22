@@ -23,8 +23,8 @@ const Viewproduct = ({ params }) => {
           router.back(), window.scrollTo(0, 0);
         }}
       >
-        <MdOutlineArrowBackIos className="text-2xl absolute left-25 top-25" />
-        <MdOutlineArrowBackIos className="text-2xl absolute left-23 top-25" />
+        <MdOutlineArrowBackIos className="text-2xl absolute left-3 xl:left-25 top-35 md:top-25" />
+        <MdOutlineArrowBackIos className="text-2xl absolute left-5 xl:left-23 top-35 md:top-25" />
       </button>
       <div className="px-[5%] xl:px-[13%] pt-13 md:flex justify-between">
         <aside>
