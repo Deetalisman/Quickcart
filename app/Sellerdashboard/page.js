@@ -102,7 +102,7 @@ const Sidebar = ({
       <div
         onClick={handleSellerView1}
         className={
-          "flex h-15 p-5 pl-4 w-50 lg:pl-10 pt-5 cursor-pointer relative " +
+          "flex h-15 p-5 pl-4 w-52 lg:w-60 lg:pl-10 pt-5 cursor-pointer relative " +
           (sellerView1 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
@@ -117,7 +117,7 @@ const Sidebar = ({
       <div
         onClick={handleSellerView2}
         className={
-          "h-15 flex p-5 pl-4 w-50 pt-5 lg:pl-10 cursor-pointer relative  " +
+          "h-15 flex p-5 pl-4 w-52 lg:w-60 pt-5 lg:pl-10 cursor-pointer relative  " +
           (sellerView2 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
@@ -132,7 +132,7 @@ const Sidebar = ({
       <div
         onClick={handleSellerView3}
         className={
-          "h-15 flex p-4 pt-5 pl-4 w-50 lg:pl-10 cursor-pointer relative " +
+          "h-15 flex p-4 pt-5 pl-4 w-52 lg:w-60 lg:pl-10 cursor-pointer relative " +
           (sellerView3 ? "bg-[#fdeee6]" : "hover:bg-gray-100")
         }
       >
