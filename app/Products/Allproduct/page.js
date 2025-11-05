@@ -72,6 +72,7 @@ const Allproduct = () => {
           })}
         </aside>
       </div>
+      <Footer />
     </div>
   );
 };

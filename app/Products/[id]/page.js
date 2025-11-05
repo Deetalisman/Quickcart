@@ -8,12 +8,36 @@ import Link from "next/link";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { Await } from "react-router-dom";
+import UserOrder from "@/app/UserOrder/page";
+import { useState } from "react";
 const Viewproduct = ({ params }) => {
   const router = useRouter();
   const { id } = params;
   const product = products.find((item) => item.id === parseInt(id));
-  const featuredproduct = products.filter((item) => item.id < 6);
+  const handleCart = () => {
+    try {
+      // Get existing cart from localStorage (or empty array if none)
+      const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
+      // Check if product already exists in the cart
+      const alreadyInCart = existingCart.find((item) => item.id === product.id);
+
+      if (alreadyInCart) {
+        alert(`${product.name} is already in your cart!`);
+        return;
+      }
+      console.log(product.name);
+      // Add product to the array
+      const updatedCart = [...existingCart, product];
+
+      // Save updated cart back to localStorage
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+      alert(`${product.name} added to cart! 🛒`);
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
   return (
     <div className="relative">
       <Navbar />
@@ -78,7 +102,10 @@ const Viewproduct = ({ params }) => {
             <p className="text-gray-500 ml-18">{product.category}</p>
           </div>
           <div className="mt-10">
-            <button className="w-40 xl:w-55 h-11 text-sm bg-gray-300">
+            <button
+              onClick={handleCart}
+              className="w-40 xl:w-55 h-11 text-sm bg-gray-300 cursor-pointer"
+            >
               Add to cart
             </button>
             <button className="w-40 xl:w-55 h-11 ml-4 text-sm text-white bg-[rgb(235,90,12)]">

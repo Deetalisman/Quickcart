@@ -1,13 +1,16 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa6";
+import { BsCartFill } from "react-icons/bs";
 const Navbar = ({ account, setAccount }) => {
   function handleAccount() {
     setAccount(true);
     console.log(account);
   }
+  const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
   return (
     <div>
       <div className="px-[5%] lg:px-[10%] flex justify-between py-4">
@@ -20,7 +23,16 @@ const Navbar = ({ account, setAccount }) => {
           <Navlink />
         </div>
         <aside className="flex mt-1">
-          <CiSearch className="text-xl  mr-4 font-bold text-[#1b1f27] mt-0.5 cursor-pointer" />
+          <Link href="/UserOrder">
+            <div className="relative">
+              {existingCart.length != 0 && (
+                <p className="absolute -top-4 right-3 bg-gray-300 p-1 rounded-[50%] text-[0.7rem]">
+                  {existingCart.length}
+                </p>
+              )}
+              <BsCartFill className="text-2xl  mr-6 font-bold text-[#3f5072] mt-0.5 cursor-pointer" />
+            </div>
+          </Link>
           <div
             className="flex cursor-pointer text-[#374151]"
             onClick={handleAccount}

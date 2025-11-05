@@ -5,7 +5,7 @@ import Footer from "./Footer/page";
 const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export const metadata = {
-  title: "Create Next App",
+  title: "Quickcart",
   description: "E-Commerce with Next.js",
 };
 
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={"${Outfit.className} antialiased"}>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

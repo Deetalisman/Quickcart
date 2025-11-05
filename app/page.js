@@ -20,6 +20,7 @@ export default function Home() {
       <Featured />
       <Levelup />
       <Subscribe />
+      <Footer />
     </div>
   );
 }
