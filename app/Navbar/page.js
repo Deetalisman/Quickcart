@@ -9,8 +9,11 @@ const Navbar = ({ account, setAccount }) => {
     setAccount(true);
     console.log(account);
   }
-  const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-
+  const [cart, setCart] = useState([]);
+  useEffect(() => {
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(existingCart);
+  }, []);
   return (
     <div>
       <div className="px-[5%] lg:px-[10%] flex justify-between py-4">
@@ -25,9 +28,9 @@ const Navbar = ({ account, setAccount }) => {
         <aside className="flex mt-1">
           <Link href="/UserOrder">
             <div className="relative">
-              {existingCart.length != 0 && (
+              {cart.length != 0 && (
                 <p className="absolute -top-4 right-3 bg-gray-300 p-1 rounded-[50%] text-[0.7rem]">
-                  {existingCart.length}
+                  {cart.length}
                 </p>
               )}
               <BsCartFill className="text-2xl  mr-6 font-bold text-[#3f5072] mt-0.5 cursor-pointer" />
