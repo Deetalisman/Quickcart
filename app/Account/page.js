@@ -3,11 +3,10 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { Formik, useFormik } from "formik";
 import * as yup from "yup";
-const Account = ({ account, setAccount }) => {
-  function handlecloseacc() {
-    setAccount(false);
-    console.log(account);
-  }
+import { useRouter } from "next/navigation";
+
+const Account = () => {
+  const router = useRouter();
   const onSubmit = () => {
     console.log("submitted");
   };
@@ -29,7 +28,9 @@ const Account = ({ account, setAccount }) => {
     <div className="absolute overflow-hidden  flex justify-center align-middle top-0 bg-[rgba(3,3,3,0.8)] w-[100%] h-[100vh]">
       <aside className=" w-[23rem] md:w-[28rem] mt-20  h-[32rem] py-3 bg-white rounded-lg">
         <h1
-          onClick={handlecloseacc}
+          onClick={() => {
+            router.back(), window.scrollTo(0, 0);
+          }}
           className="text-right text-gray-500 cursor-pointer mr-4"
         >
           X

@@ -10,11 +10,9 @@ import Account from "./Account/page";
 import { useState } from "react";
 
 export default function Home() {
-  const [account, setAccount] = useState(false);
   return (
     <div className="bg-[rgb(255,255,255)] relative">
-      <Navbar account={account} setAccount={setAccount} />
-      {account && <Account account={account} setAccount={setAccount} />}
+      <Navbar />
       <Limitedoffer />
       <Products />
       <Featured />

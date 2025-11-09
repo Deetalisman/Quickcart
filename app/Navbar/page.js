@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa6";
 import { BsCartFill } from "react-icons/bs";
-const Navbar = ({ account, setAccount }) => {
-  function handleAccount() {
-    setAccount(true);
-    console.log(account);
-  }
+const Navbar = () => {
   const [cart, setCart] = useState([]);
   useEffect(() => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -29,20 +25,19 @@ const Navbar = ({ account, setAccount }) => {
           <Link href="/UserOrder">
             <div className="relative">
               {cart.length != 0 && (
-                <p className="absolute -top-4 right-3 bg-gray-300 p-1 rounded-[50%] text-[0.7rem]">
+                <p className="absolute -top-4 right-3 bg-gray-300 p-1 h-5 w-4 rounded-[50%] text-[0.7rem]">
                   {cart.length}
                 </p>
               )}
               <BsCartFill className="text-2xl  mr-6 font-bold text-[#3f5072] mt-0.5 cursor-pointer" />
             </div>
           </Link>
-          <div
-            className="flex cursor-pointer text-[#374151]"
-            onClick={handleAccount}
-          >
-            <FaRegUser className="mr-2 mt-1" />
-            <p className="text-gray-600 text-sm mt-1">Account</p>
-          </div>
+          <Link href="/Account">
+            <div className="flex cursor-pointer text-[#374151]">
+              <FaRegUser className="mr-2 mt-1" />
+              <p className="text-gray-600 text-sm mt-1">Account</p>
+            </div>
+          </Link>
         </aside>
       </div>
       <hr className="text-gray-400"></hr>
