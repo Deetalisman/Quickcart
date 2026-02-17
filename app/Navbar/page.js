@@ -25,11 +25,16 @@ const Navbar = () => {
           <Link href="/UserOrder">
             <div className="relative">
               {cart.length != 0 && (
-                <p className="absolute -top-4 right-3 bg-gray-300 p-1 h-5 w-4 rounded-[50%] text-[0.7rem]">
+                <p className="absolute -top-4 right-3 bg-gray-300 pl-1  pt-0.5h-5 w-4 rounded-[50%] text-[0.7rem]">
                   {cart.length}
                 </p>
               )}
-              <BsCartFill className="text-2xl  mr-6 font-bold text-[#3f5072] mt-0.5 cursor-pointer" />
+              <BsCartFill
+                className={
+                  "text-2xl  mr-6 font-bold text-[#3f5072] mt-0.5 cursor-pointer " +
+                  (cart.length !== 0 && "text-[rgb(235,90,12)]")
+                }
+              />
             </div>
           </Link>
           <Link href="/Account">
@@ -56,21 +61,24 @@ const Navlink = () => {
     <div>
       <aside className="flex">
         <ul className="flex justify-between text-gray-600 w-[15rem] lg:w-[20rem] mt-1">
-          <Link href="/">
+          <Link href="/" className="hover:text-[rgb(235,90,12)]">
             <li>Home</li>
           </Link>
-          <Link href="/Products/Allproduct">
+          <Link
+            href="/Products/Allproduct"
+            className="hover:text-[rgb(235,90,12)]"
+          >
             <li>Shop</li>
           </Link>
-          <Link href="/">
+          <Link href="/" className="hover:text-[rgb(235,90,12)]">
             <li>About Us</li>
           </Link>
-          <Link href="/">
+          <Link href="/" className="hover:text-[rgb(235,90,12)]">
             <li>Contact</li>
           </Link>
         </ul>
         <Link href="/Sellerdashboard">
-          <button className="ml-4 lg:ml-10 cursor-pointer border-1 rounded-xl p-2 text-[0.7rem] text-gray-400">
+          <button className="ml-4 lg:ml-10 hover:bg-[rgb(235,90,12)] hover:text-white cursor-pointer border-1 rounded-xl p-2 text-[0.7rem] text-gray-400">
             Seller Dashboard
           </button>
         </Link>

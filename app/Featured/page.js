@@ -18,7 +18,7 @@ const Featured = () => {
           />
           <div className="absolute group-hover:bottom-8 0 transition-all duration-400 bottom-5 w-fit px-4 lg:px-7 text-white">
             <h1 className="font-bold text-lg xl:text-2xl">Unparalled Sound</h1>
-            <p className=" mt-1 xl:mt-2 w-[100%] xl:w-[70%] xl:text-xl text-sm">
+            <p className=" mt-1 xl:mt-2 w-[100%] xl:w-[70%] xl:text-md text-sm">
               Experience crystal-clear audio with premium headphones
             </p>
             <button className="mt-1 cursor-pointer bg-[rgb(235,90,12)] rounded-sm px-5 lg:px-7 py-2 text-[0.7rem] lg:text-[0.9rem] text-white">
@@ -34,7 +34,7 @@ const Featured = () => {
           />
           <div className="absolute  group-hover:bottom-8 transition-all duration-400 bottom-5 w-fit px-4 lg:px-7 text-white">
             <h1 className="font-bold text-lg xl:text-2xl">Stay Connected</h1>
-            <p className="mt-1 xl:mt-2 w-[100%] xl:w-[70%]  xl:text-xl text-sm">
+            <p className="mt-1 xl:mt-2 w-[100%] xl:w-[70%]  xl:text-md text-sm">
               Compact and stylish earphones for every occasion
             </p>
             <button className="mt-1 cursor-pointer bg-[rgb(235,90,12)] rounded-sm px-5 lg:px-7 py-2 text-[0.7rem] lg:text-[0.9rem] text-white">
@@ -52,7 +52,7 @@ const Featured = () => {
             <h1 className="font-bold text-lg xl:text-2xl">
               Power in every Pixel
             </h1>
-            <p className="mt-2 w-[100%] xl:w-[70%]  xl:text-xl text-sm">
+            <p className="mt-2 w-[100%] xl:w-[70%]  xl:text-md text-sm">
               Shop that latest laptop for work,gaming and more
             </p>
             <button className="mt-1 cursor-pointer bg-[rgb(235,90,12)] rounded-sm px-5 lg:px-7 py-2 text-[0.7rem] lg:text-[0.9rem] text-white">
