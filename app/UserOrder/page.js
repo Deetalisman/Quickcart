@@ -39,7 +39,9 @@ const UserOrder = () => {
         </p>
         <div className="px-[0%] lg:px-[5%] pt-3 md:pt-8 w-[100%] lg:w-[90%]">
           {cartItems.length === 0 ? (
-            <p className="text-xl text-center">Your cart is empty</p>
+            <p className="text-xl text-center">
+              Your cart is empty..Go Shopping!!
+            </p>
           ) : (
             <div>
               {cartItems.map((item) => (
