@@ -9,11 +9,12 @@ import { MdOutlineArrowBackIos } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { Await } from "react-router-dom";
 import UserOrder from "@/app/UserOrder/page";
-import { useState } from "react";
+import { useState, use } from "react";
 const Viewproduct = ({ params }) => {
   const router = useRouter();
-  const { id } = params;
+  const { id } = use(params);
   const product = products.find((item) => item.id === parseInt(id));
+  console.log(product);
   const handleCart = () => {
     try {
       // Get existing cart from localStorage (or empty array if none)
@@ -26,7 +27,7 @@ const Viewproduct = ({ params }) => {
         alert(`${product.name} is already in your cart!`);
         return;
       }
-      console.log(product.name);
+      console.log(product);
       // Add product to the array
       const updatedCart = [...existingCart, product];
 
@@ -44,7 +45,7 @@ const Viewproduct = ({ params }) => {
       <button
         className="cursor-pointer"
         onClick={() => {
-          router.back(), window.scrollTo(0, 0);
+          (router.back(), window.scrollTo(0, 0));
         }}
       >
         <MdOutlineArrowBackIos className="text-2xl absolute left-3 xl:left-25 top-35 md:top-25" />
@@ -52,20 +53,20 @@ const Viewproduct = ({ params }) => {
       </button>
       <div className="px-[5%] xl:px-[13%] pt-13 md:flex justify-between">
         <aside>
-          <Image
+          { <Image
             src={product.imgSrc}
             alt={product.name}
             width={450}
             height={480}
             className="bg-[#f0f0f2] rounded-lg w-[100%] md:w-80 lg:w-100 xl:w-110"
-          />
-          <Image
+          /> }
+          {<Image
             src={product.imgSrc}
             alt={product.name}
             width={100}
             height={100}
             className="bg-[#f0f0f2] rounded-lg mt-2 "
-          />
+          />}
         </aside>
         <aside className="w-[100%] mt-7 md:mt-0 md:w-[50%]">
           <h1 className="font-bold text-2xl text-[#374151]">{product.name} </h1>

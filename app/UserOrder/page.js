@@ -37,7 +37,7 @@ const UserOrder = () => {
           <MdOutlineArrowBackIos className="mt-1" />
           <p>Cart</p>
         </p>
-        <div className="px-[0%] lg:px-[5%] pt-3 md:pt-8 w-[100%] lg:w-[90%]">
+        <div className="bg-gray-200 h-fit rounded-lg pb-[6rem] mt-3 mx-[0%] lg:px-[5%]  md:pt-2 w-[100%] lg:w-[95%]">
           {cartItems.length === 0 ? (
             <p className="text-xl text-center">
               Your cart is empty..Go Shopping!!
@@ -55,7 +55,7 @@ const UserOrder = () => {
                     />
                     <div className="w-[100%]">
                       <div className="flex justify-between">
-                        <p className="mt-1 text-[1.1rem] w-[50%] ml-5 ">
+                        <p className="mt-1 text-[1.4rem] w-[50%] ml-5 ">
                           {item.name}
                         </p>
                         <MdDeleteOutline
@@ -64,14 +64,14 @@ const UserOrder = () => {
                         />
                       </div>
                       <p className="text-sm ml-5">{item.description}</p>
-                      <p className="text-[rgb(235,90,12)] text-sm ml-5 mt-9">
+                      <p className="text-[rgb(235,90,12)] text-sm ml-5 mt-7">
                         Great deal
                       </p>
                       <aside className="flex">
-                        <p className="text-[1rem] text-black ml-5 mt-2">
+                        <p className="text-[1.3rem] text-black ml-5 mt-2">
                           {item.price}
                         </p>
-                        <p className="px-2 h-6 mt-2 text-red-600 ml-3 rounded-lg border-2 text-sm border-[rgb(235,90,12)] ">
+                        <p className="px-2 h-5 mt-4 text-[0.7rem] text-red-600 ml-3 rounded-lg border-2  border-[rgb(235,90,12)] ">
                           -50%
                         </p>
                       </aside>
@@ -81,13 +81,13 @@ const UserOrder = () => {
               ))}
               <div className="flex float-right">
                 <p
-                  className="mt-7 cursor-pointer text-white text-sm pt-3 bg-pink-400 mr-5 w-22 text-center px-2 py-1 rounded-sm "
+                  className="mt-7 cursor-pointer text-white hover:bg-white hover:text-black text-sm pt-3 bg-[rgb(235,90,12)] mr-5 w-22 text-center px-2 py-1 rounded-lg "
                   onClick={handleClear}
                 >
                   Clear all
                 </p>
                 <p
-                  className="mt-7 cursor-pointer text-white text-sm pt-3 bg-pink-400 w-26 text-center p-2 rounded-sm"
+                  className="mt-7 cursor-pointer hover:bg-white hover:text-black text-white text-sm pt-3 bg-[rgb(235,90,12)] w-26 text-center p-2 rounded-lg"
                   onClick={handleClear}
                 >
                   Shop all cart
